@@ -23,7 +23,7 @@ function PickArtist() {
 	ArtistName = ArtistJSON[i].Artist;
 	ArtistNameStr = ArtistJSON[i].Artist.toUpperCase();
 	Track = ArtistJSON[i].Song;
-	AlbumCover = ArtistJSON[i].Cover;
+	AlbumCover = ArtistJSON[i].Artist;
 	ArtistNameAry = ArtistNameStr.split("");
 	ArtistDisplay = ArtistNameStr.split("");
 	for(var i=0; i<ArtistDisplay.length; i++) {
@@ -71,8 +71,8 @@ function Winner() {
 	document.getElementById("Wins").innerHTML = Wins;
 	document.getElementById("Artist").innerHTML = ArtistName;
 	document.getElementById("AlbumTrack").innerHTML = Track;
-	document.getElementById("Cover").src = "assets/img/" + AlbumCover + ".jpg";
-	document.getElementById("Music").src = "assets/mp3/" + Track + ".mp3";
+	document.getElementById("Cover").src = "assets/img/" + AlbumCover.noSpace() + ".jpg";
+	document.getElementById("Music").src = "assets/mp3/" + Track.noSpace() + ".mp3";
 }
 
 function Loser() {
@@ -137,3 +137,13 @@ function GetLetter() {
 		document.getElementById("Guesses").innerHTML = Guesses;
 	}
 }
+
+String.prototype.noSpace = function() {
+    var target = this;
+    return target.replaceAll(" ", "_");
+};
+
+String.prototype.replaceAll = function(search, replacement) {
+    var target = this;
+    return target.replace(new RegExp(search, 'g'), replacement);
+};
