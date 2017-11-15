@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hangman</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/Hangman.css">
+    <script src="./assets/js/Hangman.js"></script>
+    <script src="./assets/js/songwriters.js"></script>
+</head>
+<body id=Page onload=Initialize()>
+<div class="container">
+	<div class="row">
+    	<header>Singer/Songwriters of the '70s</header>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+			<div class="row">
+		    	<img id="Cover" src="assets\img\Blank.jpg" alt="Album Cover" class="AlbumCover">
+				<audio autoplay id="Music">
+					<source src="#" type="audio/mpeg">
+				</audio>
+			</div>
+			<div class="row">
+		    	<h2 id="Artist">Artist</h2>
+			</div>
+			<div class="row">
+			    <p id=AlbumTrack></p>
+			</div>
+		</div>
+        <div class="col-md-6">
+			<div class="row">
+		    	<h2>Guess the Artist</h2>
+			</div>
+			<div class="row">
+			    <h1 id=ArtistName class="Courier"></h1>
+			</div>
+			<div class="row">
+			    <br>
+			</div>
+		    <div class="row">
+		        <div class="col-xs-6 RJustify">
+			        <h2 class="RJustify">Incorrect Guesses:</h2>
+			    </div>
+		        <div class="col-xs-6 LJustify">
+			        <h2 class="LJustify" id="Missed"></h2>
+			    </div>
+			</div>
+	        <div class="row">
+		        <div class="col-xs-offset-1 col-xs-4">
+		            <h3>Guesses Left:</h3>
+		        </div>
+		        <div class="col-xs-offset-1 col-xs-2">
+		            <h3>Wins:</h3>
+		        </div>
+		        <div class="col-xs-2">
+		        	<h3>Loses:</h3>
+				</div>
+	        </div>
+		    <div class="row">
+		        <div class="col-xs-offset-1 col-xs-4">
+		            <h4 id="Guesses"></h4>
+		        </div>
+		        <div class="col-xs-offset-1 col-xs-2">
+		            <h4 id="Wins"></h4>
+		        </div>
+		        <div class="col-xs-2">
+		            <h4 id="Losses"></h4>
+		        </div>
+			</div>
+			<div><h3 id="Hint"></h3></div>
+		    <div id="Announce" class="Row">
+			    <div class="row">
+		            <h2 id="Text"></h2>
+			    </div>
+		        <div class="row">
+		             <h2>
+		                <button type="button" OnClick=YesAnswer()>Yes</button>
+		                <button type="button" OnClick=NoAnswer()>No</button>
+		            </h2>
+		        </div>
+			</div>
+        </div>
+    </div>
+    <div class="row">
+    	<footer>© Copyright 2017 - Bob Imel II</footer>
+    </div>
+</div></body>
+</html>
